@@ -13,6 +13,11 @@ const port = 3000;
 // Load env vars
 
 dotenv.config();
+app.use(cors({
+  origin:["https://blogging-sigma-eight.vercel.app"],
+  method:["POST","GET","PUT","DELETE","PATCH"],
+  credentials:true
+}))
 
 // Connect to the database
 connectDB();
@@ -21,7 +26,6 @@ connectDB();
 app.use(express.json());
 
 
-app.use(cors())
 
 // Routes
 app.use('/users', userRoutes);
