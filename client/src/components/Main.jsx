@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import BlogCard from './BlogCard';
 import toast from 'react-hot-toast';
 import inputContext from '../contex/inputcontext';
-const API_URL = "blogging-sigma-eight.vercel.app/api";
+const API_URL = "https://blogging-sigma-eight.vercel.app";
 
 const Main = () => {
   const [data, setData] = useState([]);
