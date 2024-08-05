@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import userContext from '../contex/user';
 
 const CreateBlog = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const CreateBlog = () => {
     tags: [],
     categories: []
   });
+  const { userInfo } = useContext(userContext);
+
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -41,6 +44,10 @@ const CreateBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      if (!userInfo.isLoggedIn) {
+        toast.error('Please log in to create a blog');
+        return;
+      }
       const response = await fetch('http://localhost:3000/api/create', {
         method: 'POST',
         headers: {

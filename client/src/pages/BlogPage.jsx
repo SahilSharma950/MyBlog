@@ -19,7 +19,6 @@ export default function BlogPage() {
       });
   }, []);
 
-
   useEffect(() => {
     fetch(`http://localhost:3000/api/blog/${id}`)
       .then(response => response.json())
@@ -45,7 +44,9 @@ export default function BlogPage() {
     return <div>Loading...</div>;
   }
 
+
   return (
+    <>
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row gap-4">
         <div className="md:w-2/3">
@@ -103,8 +104,8 @@ export default function BlogPage() {
                 <img src={post.imageUrl} alt={post.title} className="w-16 h-16 rounded object-cover" />
                 <div>
                   <h3 className="text-lg font-medium">{post.title}</h3>
-                  <p className="text-sm text-gray-600"><strong>Date :</strong> {formatDate(post.createdAt)}</p>
-                  <p> <strong>Time :</strong>{formatTime(post.createdAt)}</p>
+                  <p className="text-sm text-gray-600"><strong >Date : </strong> {formatDate(post.createdAt)}</p>
+                  <p> <strong className='mr-1'>Time :</strong>{formatTime(post.createdAt)}</p>
                 </div>
               </div>
             ))}
@@ -130,5 +131,6 @@ export default function BlogPage() {
         </button>
       </div> */}
     </div>
+    </>
   );
 }

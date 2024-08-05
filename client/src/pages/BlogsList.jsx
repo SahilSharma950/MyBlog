@@ -43,15 +43,16 @@ const BlogList = () => {
           <div key={blog._id} className="bg-white p-4 rounded-lg shadow-md">
             <img src={blog.imageUrl} alt={blog.title} className="w-full h-48 object-cover rounded-lg mb-4" />
             <h2 className="text-2xl font-bold mb-2">{blog.title}</h2>
-            <p className="text-gray-700 mb-2"><strong>Author:</strong> {blog.author}</p>
+            <p className="text-gray-700 mb-2"><strong>Author :</strong> {blog.author}</p>
             {blog.createdAt && (
                 <p className="text-gray-600 text-sm">
-                 <strong> Published on:</strong> {new Date(blog.createdAt).toLocaleDateString()}
+                 <strong> Published on :</strong> {new Date(blog.createdAt).toLocaleDateString()}
                 </p>
               )}
             <div className="flex flex-wrap my-4">
               <span className="mr-2"><strong>Tags :</strong> </span>
               {blog.tags && blog.tags.map((tag, index) => (
+
                 <span
                   key={index}
                   className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800"

@@ -29,7 +29,8 @@ const Header = () => {
     localStorage.removeItem("id");
     localStorage.removeItem("name");
     localStorage.removeItem("email");
-    setUserInfo("");
+    localStorage.removeItem("token");
+    setUserInfo(null);
     navigate("/");
     // Redirect or update UI as needed
   };
@@ -99,14 +100,14 @@ const Header = () => {
               </button>
             </div>
           )}
-        </div> :  <Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">
+        </div>:<Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">
       <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
       Login
     </Link>}
       </div>
       <hr />
       <div className="flex flex-col lg:flex-row justify-around items-center h-auto lg:h-[13vh] px-4 py-2">
-        <div className="flex flex-col lg:flex-row items-center gap-6 mt-2 lg:mt-0">
+        <div className="flex flex-col lg:flex-row items-center gap-6 mt-2 lg:mt-0 w-full lg:w-auto">
           <h2 className="text-3xl mr-7">Filter</h2>
           <div className="box h-16"></div>
           <div className="text-2xl">
@@ -120,8 +121,8 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <form className="mt-2 lg:mt-0">
-          <div className="relative">
+        <form className="mt-2 lg:mt-0 w-full lg:w-auto">
+          <div className="relative w-full lg:w-auto">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
                 className="w-4 h-4 text-gray-500 dark:text-gray-400"

@@ -8,7 +8,7 @@ const blogRoutes = require('./routes/blog')
 const authRoutes = require('./routes/auth');
 // const uploadFile = require('./routes/upload')
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 // Load env vars
 
@@ -19,7 +19,6 @@ connectDB();
 
 // Middleware
 app.use(express.json());
-
 
 app.use(cors())
 

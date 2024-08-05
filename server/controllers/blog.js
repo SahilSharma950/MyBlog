@@ -36,7 +36,7 @@ exports.getAllBlogs = async(req,res)=>{
 exports.recentPosts = async (req, res) => {
     try {
       // Use the Blog model instead of BlogPost
-      const recentPosts = await Blog.find().sort({ createdAt: -1 }).limit(1)
+      const recentPosts = await Blog.find().sort({ createdAt: -1 }).limit(2)
       res.status(200).json(recentPosts);
     } catch (err) {
       console.error("Error fetching recent posts:", err.message);

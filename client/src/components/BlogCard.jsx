@@ -11,11 +11,11 @@ const BlogCard = ({ title, author, imageUrl, id, onDelete, tags,createdAt }) => 
       <img className="w-full h-72 object-cover object-center" src={imageUrl} alt="Blog" />
       <div className="px-4 py-2">
         <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
-        <p className="text-gray-700 mt-2"><strong>Author:</strong> {author}</p>
+        <p className="text-gray-700 mt-2"><strong>Author :</strong> {author}</p>
       </div>
       <div className="px-4 py-1">
         <p className="text-gray-700 text-base">
-        <strong> Published on:</strong> {new Date(createdAt).toLocaleDateString()}
+        <strong> Published on :</strong> {new Date(createdAt).toLocaleDateString()}
         </p>
       </div>
       <div className="px-4 py-1 flex flex-wrap gap-2 mb-">
