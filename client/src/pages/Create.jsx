@@ -44,11 +44,15 @@ const CreateBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
       if (!userInfo.isLoggedIn) {
         toast.error('Please log in to create a blog');
         return;
       }
       const response = await fetch('http://localhost:3000/api/create', {
+=======
+      const response = await fetch('blogging-sigma-eight.vercel.app/api/create', {
+>>>>>>> 8a3efded33a8042de67d8403d034a6d0bcb76536
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
