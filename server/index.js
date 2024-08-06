@@ -8,18 +8,20 @@ const blogRoutes = require('./routes/blog')
 const authRoutes = require('./routes/auth');
 // const uploadFile = require('./routes/upload')
 const app = express();
-const port = process.env.PORT;
 
-// Load env vars
 dotenv.config();
 
-app.use(cors())
+// Load env vars
+const port =process.env.PORT
 
 // Connect to the database
 connectDB();
 
 // Middleware
 app.use(express.json());
+
+
+app.use(cors())
 
 // Routes
 app.use('/users', userRoutes);

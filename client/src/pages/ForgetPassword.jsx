@@ -17,7 +17,7 @@ const ForgotPassword = () => {
       return;
     }
     try {
-      const res = await fetch('blogging-sigma-eight.vercel.app/auth/forgot-password', {
+      const res = await fetch('http://localhost:3000/auth/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

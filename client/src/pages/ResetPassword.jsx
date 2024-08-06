@@ -10,7 +10,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`blogging-sigma-eight.vercel.app/auth/reset-password/${token}`, {
+      const res = await fetch(`http://localhost:3000/auth/reset-password/${token}`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'

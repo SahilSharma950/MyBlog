@@ -24,7 +24,7 @@ const SignUpPage = () => {
         e.preventDefault()
     
         try {
-            const response = await fetch('https://blogging-sigma-eight.vercel.app/auth/signup',{
+            const response = await fetch('http://localhost:3000/auth/signup',{
                 method : 'POST',
                 headers:{
                     'Content-Type': 'application/json'

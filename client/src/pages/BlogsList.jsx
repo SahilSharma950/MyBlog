@@ -9,7 +9,7 @@ const BlogList = () => {
   const { userInfo } = useContext(userContext);
 
   useEffect(() => {
-    fetch("blogging-sigma-eight.vercel.app/api")
+    fetch("http://localhost:3000/api")
       .then((response) => response.json())
       .then((data) => setBlogs(data))
       .catch((err) => console.log("Error fetching blog list:", err));
@@ -17,7 +17,7 @@ const BlogList = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`blogging-sigma-eight.vercel.app/api/${id}`, {
+      const response = await fetch(`http://localhost:3000/api/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {

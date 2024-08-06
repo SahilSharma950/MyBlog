@@ -10,7 +10,7 @@ export default function BlogPage() {
   const [recentPosts, setRecentPosts] = useState(null);
 
   useEffect(() => {
-    fetch("blogging-sigma-eight.vercel.app/api/recent-posts")
+    fetch("http://localhost:3000/api/recent-posts")
       .then(response => response.json())
       .then(posts => setRecentPosts(posts))
       .catch(err => {
@@ -20,7 +20,7 @@ export default function BlogPage() {
   }, []);
 
   useEffect(() => {
-    fetch(`blogging-sigma-eight.vercel.app/api/blog/${id}`)
+    fetch(`http://localhost:3000/api/blog/${id}`)
       .then(response => response.json())
       .then(data => setData(data))
       .catch(err => {

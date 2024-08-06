@@ -6,7 +6,7 @@ const BlogPost = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`blogging-sigma-eight.vercel.app/api/blog/${id}`)
+    fetch(`http://localhost:3000/api/blog/${id}`)
       .then((response) => response.json())
       .then((data) => setPost(data))
       .catch((err) => {
